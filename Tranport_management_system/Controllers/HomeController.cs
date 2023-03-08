@@ -7,14 +7,33 @@ namespace Tranport_management_system.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly TransportManagementContext _transport;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,TransportManagementContext transport)
         {
             _logger = logger;
+            _transport = transport;
         }
-
         public IActionResult Index()
         {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Login(string agency,string password)
+        { 
+            if(agency==null || _transport.Registers==null)
+            {
+                return NotFound();
+            }
+            var res= _transport.Registers.FirstOrDefault(m=>m.AdminAgencyName==agency);
+            if (res == null) { return NotFound();}
+            else
+            {
+                if(res.AdminPassword==password)
+                {
+                    return RedirectToAction("Index", "Registers");
+                }
+            }
             return View();
         }
 

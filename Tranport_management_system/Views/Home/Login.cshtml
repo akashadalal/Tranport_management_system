@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <form asp-action="Login">
+        <div class="form-group">
+            Agency Name:
+            <input type="text" name="agency" class="form-control" required />
+        </div>
+        <div class="form-group">
+            Password:
+            <input type="password" name="password" class="form-control" required />
+        </div>
+        <div>
+            <input type="submit" value="Login" class="btn btn-primary" />
+            @Html.ActionLink("Registers","Create","Registers")
+        </div>
+    </form>
+</body>
+</html>

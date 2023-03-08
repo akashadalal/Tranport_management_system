@@ -3,29 +3,30 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
+<h3 class="text-black text-decoration-underline"> Vehicle Details </h3>
 
 <p>
-    <a asp-action="Create">Create New</a>
+   <a asp-action="Create"><input type="submit" value="Add Vehicle" class="btn btn-secondary m-1" /></a>
 </p>
-<table class="table">
+
+<table class="table table-striped border">
     <thead>
-        <tr>
+        <tr class="table-info">
+            
             <th>
-                @Html.DisplayNameFor(model => model.Id)
+                Vehicle Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.VehName)
+                Vehicle Model
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.VehModel)
+                Vehicle Status
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.VehStatus)
+                Vehicle Color
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.VehColor)
+                Actions
             </th>
             <th></th>
         </tr>
@@ -33,9 +34,7 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.VehName)
             </td>
@@ -49,9 +48,8 @@
                 @Html.DisplayFor(modelItem => item.VehColor)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.VehNumber">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.VehNumber">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.VehNumber">Delete</a>
+            
+                <a asp-action="Details" asp-route-id="@item.VehNumber" class="btn btn-secondary">Details</a> 
             </td>
         </tr>
 }

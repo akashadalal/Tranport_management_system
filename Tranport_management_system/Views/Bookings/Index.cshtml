@@ -3,69 +3,71 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
-
+<h2 class="text-black text-decoration-underline">Customer details</h2>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create"> <input type="submit" value="Create New User" class="btn btn-secondary m-1" /></a>
 </p>
-<table class="table">
+<table class="table table-striped border">
     <thead>
-        <tr>
+        <tr class="table-info">
             <th>
-                @Html.DisplayNameFor(model => model.CustName)
+                Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CustAge)
+                Age
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CustGender)
+               Gender
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CustSeatNumber)
+               Seat Number
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CustContactNumber)
+               Contact Number
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CustDepature)
+                Depature from
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CustArrivingTo)
+                ArrivingTo
             </th>
-            <th></th>
+            <th>
+                Actions
+            </th>
+
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustAge)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustGender)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustSeatNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustContactNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustDepature)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustArrivingTo)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustAge)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustGender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustSeatNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustContactNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustDepature)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustArrivingTo)
+                </td>
+                <td>
+                    
+                    <a asp-action="Details" asp-route-id="@item.Id"><input type="submit" value="Details" class="btn btn-secondary" /></a>
+
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

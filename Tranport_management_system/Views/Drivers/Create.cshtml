@@ -4,44 +4,39 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Driver</h4>
+<h4 class="text-info">Driver Details</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="DriverName" class="control-label"></label>
+                <label asp-for="DriverName" class="control-label m-2">Driver Name</label>
                 <input asp-for="DriverName" class="form-control" />
                 <span asp-validation-for="DriverName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DriverAge" class="control-label"></label>
+                <label asp-for="DriverAge" class="control-label m-2">Driver Age</label>
                 <input asp-for="DriverAge" class="form-control" />
                 <span asp-validation-for="DriverAge" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DriverLic" class="control-label"></label>
+                <label asp-for="DriverLic" class="control-label m-2">Driver License</label>
                 <input asp-for="DriverLic" class="form-control" />
                 <span asp-validation-for="DriverLic" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DriverContactNumber" class="control-label"></label>
+                <label asp-for="DriverContactNumber" class="control-label m-2">Driver Contact Number</label>
                 <input asp-for="DriverContactNumber" class="form-control" />
                 <span asp-validation-for="DriverContactNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Add Driver" class="btn btn-primary m-2" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

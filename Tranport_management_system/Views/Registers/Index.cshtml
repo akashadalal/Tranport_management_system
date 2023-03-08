@@ -4,33 +4,31 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<table class="table table-striped border" >
     <thead>
-        <tr>
+        <tr class="table-info">
             <th>
-                @Html.DisplayNameFor(model => model.AdminUsername)
+                Username
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AdminName)
+                Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AdminPassword)
+                Passoword
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AdminEmail)
+                Email
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AdminContactNumber)
+                Contact number
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AdminAgencyName)
+                Agency name
             </th>
-            <th></th>
+            <th>
+                Actions
+            </th>
+            
         </tr>
     </thead>
     <tbody>
@@ -55,9 +53,9 @@
                 @Html.DisplayFor(modelItem => item.AdminAgencyName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+ 
+                <a asp-action="Details" asp-route-id="@item.Id"><input type="submit" value="Details" class="btn btn-secondary" /></a> 
+         
             </td>
         </tr>
 }

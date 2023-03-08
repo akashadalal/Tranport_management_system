@@ -3,26 +3,28 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
+<h3 class="text-black text-decoration-underline">Driver Details Details</h3>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create"><input type="submit" value="Add Driver" class="btn btn-secondary m-1" /></a>
 </p>
-<table class="table">
+<table class="table table-striped border">
     <thead>
-        <tr>
+        <tr class="table-info">
             <th>
-                @Html.DisplayNameFor(model => model.DriverName)
+                Driver Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DriverAge)
+                Driver Age
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DriverLic)
+                Driver License 
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DriverContactNumber)
+                Driver Contact Number
+            </th>
+            <th>
+                Actions
             </th>
             <th></th>
         </tr>
@@ -43,11 +45,7 @@
                 @Html.DisplayFor(modelItem => item.DriverContactNumber)
             </td>
             <td>
-                <a asp-controller="Vehicles" asp-action="Create" asp-route-id="@item.Id">Allocate Driver</a>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
+                    <a asp-controller="Vehicles" asp-action="Create" asp-route-id="@item.Id" class="btn btn-secondary">Allocate Driver</a>
         </tr>
 }
     </tbody>

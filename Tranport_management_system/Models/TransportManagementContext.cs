@@ -26,7 +26,7 @@ public partial class TransportManagementContext : DbContext
     public virtual DbSet<Vehicle> Vehicles { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=Transport_management;Trusted_Connection=True;Encrypt=false;");
+        => optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=Transport;Trusted_Connection=True;Encrypt=false;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

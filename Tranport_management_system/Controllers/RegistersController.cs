@@ -59,7 +59,7 @@ namespace Tranport_management_system.Controllers
             {
                 _context.Add(register);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index","Home");
             }
             return View(register);
         }

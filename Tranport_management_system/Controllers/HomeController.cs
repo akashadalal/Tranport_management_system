@@ -31,7 +31,7 @@ namespace Tranport_management_system.Controllers
             {
                 if(res.AdminPassword==password)
                 {
-                    return RedirectToAction("Index", "Registers");
+                    return RedirectToAction("Index", "Bookings");
                 }
             }
             return View();

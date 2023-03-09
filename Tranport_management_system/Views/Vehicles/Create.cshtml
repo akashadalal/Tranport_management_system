@@ -4,48 +4,43 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
 
-<h4>Vehicle</h4>
+<h4 class="text-black">Vehicle Details</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="VehName" class="control-label"></label>
+                <label asp-for="VehName" class="control-label m-1">Vehicle Name</label>
                 <input asp-for="VehName" class="form-control" />
                 <span asp-validation-for="VehName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="VehNumber" class="control-label"></label>
+                <label asp-for="VehNumber" class="control-label m-1">Vehicle No.</label>
                 <input asp-for="VehNumber" class="form-control" />
                 <span asp-validation-for="VehNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="VehModel" class="control-label"></label>
+                <label asp-for="VehModel" class="control-label m-1">Vehicle Model</label>
                 <input asp-for="VehModel" class="form-control" />
                 <span asp-validation-for="VehModel" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="VehStatus" class="control-label"></label>
+                <label asp-for="VehStatus" class="control-labe m-1">Vehicle Status</label>
                 <input asp-for="VehStatus" class="form-control" />
                 <span asp-validation-for="VehStatus" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="VehColor" class="control-label"></label>
+                <label asp-for="VehColor" class="control-label m-1">Vehicle Color</label>
                 <input asp-for="VehColor" class="form-control" />
                 <span asp-validation-for="VehColor" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Add Vehicle" class="btn btn-primary m-2" />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

@@ -3,26 +3,28 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
+<h3 class="text-black">Driver Details Details</h3>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create"><input type="submit" value="Add Driver" class="btn btn-secondary m-1" /></a>
 </p>
-<table class="table">
+<table class="table table-striped border">
     <thead>
-        <tr>
+        <tr class="table-info">
             <th>
-                @Html.DisplayNameFor(model => model.DriverName)
+                Driver Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DriverAge)
+                Driver Age
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DriverLic)
+                Driver License 
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DriverContactNumber)
+                Driver Contact Number
+            </th>
+            <th>
+                Actions
             </th>
             <th></th>
         </tr>
@@ -43,12 +45,43 @@
                 @Html.DisplayFor(modelItem => item.DriverContactNumber)
             </td>
             <td>
-                <a asp-controller="Vehicles" asp-action="Create" asp-route-id="@item.Id">Allocate Driver</a>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
+                    <a asp-controller="Drivers" asp-action="Popup" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-secondary">Allocate Driver</a>
         </tr>
 }
     </tbody>
 </table>
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <h3 class="pt-3 ps-4">Allocate Driver</h3>
+            <div class="form-group ps-4 pe-4">
+                <label class="control-label m-2">Driver Name</label>
+                <input class="form-control" />
+            </div>
+
+            <div class="form-group ps-4 pe-4">
+                <label class="control-label m-2">Vehicle Name</label>
+                <input class="form-control" />
+            </div>
+
+            <div class="form-group ps-4 pe-4">
+                <label class="control-label m-2">Vehicle No.</label>
+                <input class="form-control" />
+            </div>
+
+            <div class="form-group ps-4 pe-4 pb-4">
+                <label class="control-label m-2">Depature Location</label>
+                <input class="form-control" />
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <a class="btn btn-secondary">Allocate Driver</a>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -17,11 +17,10 @@ namespace Tranport_management_system.Controllers
         {
             _context = context;
         }
-
         // GET: Drivers
         public async Task<IActionResult> Index()
-        {
-              return View(await _context.Drivers.ToListAsync());
+        { 
+            return View(await _context.Drivers.ToListAsync());
         }
 
         // GET: Drivers/Details/5
@@ -147,14 +146,20 @@ namespace Tranport_management_system.Controllers
             {
                 _context.Drivers.Remove(driver);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool DriverExists(int id)
         {
-          return _context.Drivers.Any(e => e.Id == id);
+            return _context.Drivers.Any(e => e.Id == id);
+        }
+
+        public IActionResult popup()
+        {
+            return View();
         }
     }
 }
+
